@@ -1,4 +1,5 @@
 import React from 'react';
+import css from './Filter.module.css';
 
 const Filter = ({
   UpHandleFilterChange,
@@ -7,16 +8,23 @@ const Filter = ({
   Upfilter,
 }) => (
   <div>
-    <h2>Contacts</h2>
-    <label>
-      Find contacts by name
-      <input type="text" value={Upfilter} onChange={UpHandleFilterChange} />
+    <h2 className={css.title}>Contacts</h2>
+    <label className={css.container}>
+      
+      <input
+      className={css.imput}
+        placeholder="Find contacts by name"
+        type="text"
+        value={Upfilter}
+        onChange={UpHandleFilterChange}
+      />
     </label>
-    <ul>
+    <ul >
       {UpfilteredContacts.map(contact => (
-        <li key={contact.id}>
-          {contact.name}: {contact.number}
-          <button onClick={() => UphandleDelete(contact.id)}>Delete</button>
+        <li className={css.li} key={contact.id}>
+          <span className={css.span}>{contact.name}: {contact.number}</span>
+          
+          <button className={css.button} onClick={() => UphandleDelete(contact.id)}>Delete</button>
         </li>
       ))}
     </ul>

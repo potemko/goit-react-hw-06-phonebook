@@ -1,4 +1,5 @@
 import React from 'react';
+import css from './Phonebook.module.css';
 
 const Phonebook = ({
   handleSubmit,
@@ -8,13 +9,15 @@ const Phonebook = ({
   handleNumber,
 }) => (
   <div>
-    <h1>Phonebook</h1>
+    <h1 className={css.title}>Phonebook</h1>
     <form onSubmit={handleSubmit}>
+      <div className={css.container}>
       <label>
-        Name
         <input
+          className={css.imput}
           type="text"
           name="name"
+          placeholder="Name"
           value={name}
           onChange={handleChange}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -23,8 +26,9 @@ const Phonebook = ({
         />
       </label>
       <label>
-        Number
         <input
+          className={css.imput}
+          placeholder="Number"
           type="tel"
           name="number"
           value={number}
@@ -34,7 +38,9 @@ const Phonebook = ({
           required
         />
       </label>
-      <button type="submit">Add contact</button>
+      </div>
+      
+      <button className={css.button} type="submit">Add contact</button>
     </form>
   </div>
 );
