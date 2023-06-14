@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid';
 import Phonebook from 'components/Phonebook/Phonebook';
 import Filter from 'components/Filter/Filter';
-import MyRedux from 'components/MyRedux';
+import MyRedux from 'components/MyRedux/MyRedux';
 import { useDispatch, useSelector } from 'react-redux';
 
 function Contact() {
